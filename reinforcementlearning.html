@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Niharika Deshmukh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <!-- Link mobile styles for devices with a maximum width of 767px -->
+    <link rel="stylesheet" type="text/css" href="styles-mobile.css" media="screen and (max-width: 767px)">
+
+    <!-- Link tablet styles for devices with a width between 768px and 1023px -->
+    <link rel="stylesheet" type="text/css" href="styles-tablet.css" media="screen and (min-width: 768px) and (max-width: 1023px)">
+
+    <!-- Link desktop styles for devices with a width of 1024px and above -->
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen and (min-width: 1024px)">
+
+</head>
+<body>
+    
+    <div class="row">
+        <div class="column left">
+            <ul>
+              <li><a href="https://www.linkedin.com/in/niharika-deshmukh/"><i class="fa fa-linkedin"></i></a></li>
+              <li><a href="https://github.com/niharika-vdeshmukh"><i class="fa fa-github"></i></a></li>
+              <li><a href="https://niharika-vdeshmukh.github.io/"><i class="fa fa-home"></i></a></li>
+              <li><a href="Niharika_Resume.pdf"><i class="fa fa-download"></i></a></li>
+                <!-- <li><div class="vertical-line"></div></li> -->
+            </ul>
+            
+
+        </div>
+        
+        <div class="column middle">
+            <div class="about-container" id="about">
+                    <h1>MARL For Traffic Control</h1>
+                    <p>
+                        Hey there! Imagine a city where traffic jams are a thing of the past, and the endless chorus of honking horns becomes a distant memory. Inspired by this vision, our trio of passionate minds embarked on a mission to confront a notorious urban challenge: traffic congestion. Our playground? A a multi-agent environment- TrafficJunction, where vehicles transform into AI-driven agents, and algorithms take the driver's seat in redefining traffic norms.                    </p>
+                    <p>
+                        Diving into the world of multi-agent reinforcement learning, we unleashed AI agents onto the canvas of TrafficJunction's virtual streets. Think of these agents as digital drivers infused with algorithmic intuition. Our journey saw us experimenting with various approaches, from the foundational Q-learning and SARSA, to the dynamic potential of deep Q-networks (DQN). Scaling our efforts, we explored DDQN and actor-critic methods, tapping into their technical prowess to address the complexities of urban congestion.                    
+                    </p>
+                    <p>
+                        Embark on a journey with us as we harness AI's power to combat traffic congestion, turning city roads into seamless pathways of the future.
+                    </p>
+            </div>
+            
+            <div class="about-container" id="about">
+                <h4>02. ENVIRONMENT DETAILS:</h4>
+                <!-- <ul> -->
+                    <p>
+                        We used ma-gym, a collection of multi-agent environments based on openAI gym for this project. The environment is designed in a way that it aims to reduce traffic and number of collisions between vehicles.
+                    </p>
+                    <p>
+                        Environment used: TrafficJunction4-v1. It is a 4-way junction on a 14x14 grid.
+                    </p>
+                    <p>
+                        Goal: to reduce traffic jams and number of collisions in a traffic junction.
+                    </p>
+                    <p>
+                        Rewards: Whenever two cars overlap then a collision occurs. If collision occurs then the agent is penalized with a reward of -10. To prevent traffic jam a reward of -0.01 * τ is given to the agent. τ is the number of time steps taken since the car has arrived.
+                    </p>
+                    <p>
+                        Actions: There are two possible actions in the environment.
+                        Action 0 - Gas. The agent moves forward by one cell.
+                        Action 1- brake. The agent stays in the same cell.
+                    </p>
+                    <p>
+                        Observation space: The state of each agent is a vector with (3^2) *(|n| + |l| + |r|) dimensions. The variables n,l,r represent the one-hot representation of the agent’s id, current location of the agent and the assigned route number. There are two versions of the environment:
+                        V0 - Each agent gets its own local observation.
+                        V1 - Each agent gets the local observation of every other agent.
+                    </p>
+                    <p>
+                        Episode terminates when all the agents reach the goal position or when the number of timesteps in an episode exceeds the max_timesteps(40).
+                    </p>
+                    <!-- </ul> -->
+                <img style="width: 600px;" src="DBImages/Tacodbimage.png" alt="Your Image">
+
+            </div>
+            <div class="about-container" id="about">
+                <h4>03. Implementation Details</h4>
+
+                <p>
+                    In this project, we introduced a multi-agent algorithm designed to untangle the urban chaos. Imagine a symphony of algorithms orchestrating vehicles' movements to eliminate traffic snarls and minimize accidents. Our toolbox was loaded with versatile strategies: classic Tabular algorithms like Q-learning and SARSA, coupled with the neural might of deep Q-networks (DQN), DDQN, and the intelligence of actor-critic methods.
+                    Curious about our secret sauce? We cracked open the door to our training environment, revealing the base configuration that powered our experiments:
+                    Discount factor: 0.99
+                    Learning rate: 0.2
+                    Number of Episodes: 1000
+                    Gamma: 0.99                
+                </p>
+                <p>
+                    At first, a lone agent faced the challenge across all algorithms. The promising outcomes spurred us on, leading us to the next level: two agents for each algorithm. These agents shared local observations, sparking a leap in learning efficiency. Surprisingly, our results were so optimistic that we stuck to the existing reward function, skipping the need for tweaks.
+                </p>
+            </div>
+            <div class="about-container" id="about">
+                <h4>04. Results</h4>
+                <p>
+                    Our journey into the realm of AI-driven traffic solutions began with a determined step: harnessing the power of Q-Learning and SARSA.
+Armed with a learning rate of 0.2 and a gamma value of 0.99, our algorithms embarked on their training, turning our multi-agent environment into a digital battleground against congestion and accidents.
+                </p>
+                <p>
+                    As the iterations unfolded, our environment flourished under the tutelage of Q-Learning and SARSA. The results were promising, with both algorithms showcasing their prowess. The average reward spoke volumes: -0.886 for Agent 1 and -3.409 for Agent 2 in the Q-Learning corner, and -0.886 and -3.487 for the two agents in the SARSA realm. A glimpse into the efficiency of each algorithm, laying the groundwork for what was to come.
+                </p>
+                <p>
+                    Our toolkit expanded as we ventured into the world of DQN, Double DQN, Q Actor Critic, and Advantage Actor Critic. The arena was set, and the challenge was real. DQN and Double DQN embarked on a 10,000-episode journey, relentlessly working towards convergence. On the other side, Q Actor Critic and Advantage Actor Critic chose the path of patience, spanning 20,000 episodes each to unearth their potential.
+                </p>
+                <p>
+                    Drumroll, please! The moment of truth arrived as we unveiled the average rewards achieved by each algorithm. DQN and Double DQN stood tall, showcasing their prowess after conquering their 10,000-episode trials. Q Actor Critic and Advantage Actor Critic proved their mettle through dedication, emerging triumphant after 20,000 episodes. The culmination of our efforts, as average rewards whispered tales of progress, learning, and the ever-improving landscape of AI-powered traffic solutions. Join us as we dive deeper into the algorithms' victories and lessons learned, unraveling the intricate dance between code and creativity that drove us toward a future where traffic woes bow down to AI's strategic prowess. Average reward for each algorithm is as follows:
+                </p>
+
+                <table>
+                    <tr>
+                        <th>
+                            Algorithm
+                        </th>
+                        <th>
+                            Number of episodes trained	
+                        </th>
+                        <th>
+                            Agent 1 average reward	
+                        </th>
+                        <th>
+                            Agent 2 average reward	
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>Q-Learning</td>
+                        <td>30000</td>
+                        <td>-0.886</td>
+                        <td>-3.409</td>
+                    </tr>
+                    <tr>
+                        <td>SARSA</td>
+                        <td>30000</td>
+                        <td>-0.886</td>
+                        <td>-3.487</td>
+                    </tr>
+                    <tr>
+                        <td>DQN</td>
+                        <td>10000</td>
+                        <td>-0.913</td>
+                        <td>-0.967</td>
+                    </tr>
+                    <tr>
+                        <td>DDQN</td>
+                        <td>30000</td>
+                        <td>-0.887</td>
+                        <td>-0.885</td>
+                    </tr>
+                    <tr>
+                        <td>Q-Actor Critic</td>
+                        <td>20000</td>
+                        <td>-3.51</td>
+                        <td>-0.885</td>
+                    </tr>
+                    <tr>
+                        <td>Advantage Actor Critic</td>
+                        <td>20000</td>
+                        <td>-1.64</td>
+                        <td>-0.872</td>
+                    </tr>
+                </table>
+            
+            </div> 
+            <div class="about-container" id="about">
+                <div id="myBtnContainer">
+ 
+                    <button class="btn active" onclick="filterSelection('qlearning')"> Q-Learning</button>
+                    <button class="btn" onclick="filterSelection('sarsa')"> SARSA</button>
+                    <button class="btn" onclick="filterSelection('dqn')"> DQN</button>
+                    <button class="btn" onclick="filterSelection('ddqn')"> DDQN</button>
+                    <button class="btn" onclick="filterSelection('qac')"> QAC</button>
+                    <button class="btn" onclick="filterSelection('aac')"> A2C</button>
+                  </div>
+                  
+                  <!-- Portfolio Gallery Grid -->
+                  <div class="row-photo">
+                    <div class="column-photo qlearning">
+                      <div class="content-photo">
+                        <img src="RLImages/qlearningagent1.png" alt="Mountains" style="width:100%">
+                      </div>
+                    </div>
+                    <div class="column-photo qlearning">
+                      <div class="content-photo">
+                      <img src="RLImages/qlearningagent2.png" alt="Lights" style="width:100%">
+                      </div>
+                    </div>
+                    <div class="column-photo qlearning">
+                      <div class="content-photo">
+                      <img src="RLImages/qlearningtesting.png" alt="Nature" style="width:100%">
+                      </div>
+                    </div>
+                    <div class="column-photo qlearning">
+                        <div class="content-photo">
+                        <img src="RLImages/qlearningcomparison.png" alt="Nature" style="width:100%">
+                        </div>
+                      </div>
+                    
+                    <div class="column-photo sarsa">
+                      <div class="content-photo">
+                        <img src="RLImages/sarsaagent1.png" alt="Car" style="width:100%">
+                      </div>
+                    </div>
+                    <div class="column-photo sarsa">
+                      <div class="content-photo">
+                      <img src="RLImages/sarsaagent2.png" alt="Car" style="width:100%">
+                      </div>
+                    </div>
+                    <div class="column-photo sarsa">
+                      <div class="content-photo">
+                      <img src="RLImages/sarsatesting.png" alt="Car" style="width:100%">
+                      </div>
+                    </div>
+                    <div class="column-photo sarsa">
+                        <div class="content-photo">
+                        <img src="RLImages/sarsaperformance.png" alt="Car" style="width:100%">
+                        </div>
+                      </div>
+                  
+                    <div class="column-photo dqn">
+                      <div class="content-photo">
+                        <img src="RLImages/dqnagent1.png" alt="Car" style="width:100%">
+                      </div>
+                    </div>
+                    <div class="column-photo dqn">
+                      <div class="content-photo">
+                      <img src="RLImages/dqnagent2.png" alt="Car" style="width:100%">
+                      </div>
+                    </div>
+                    <div class="column-photo dqn">
+                      <div class="content-photo">
+                      <img src="RLImages/dqntesting.png" alt="Car" style="width:100%">
+                      </div>
+                    </div>
+                    <div class="column-photo dqn">
+                        <div class="content-photo">
+                        <img src="RLImages/dqnperformance.png" alt="Car" style="width:100%">
+                        </div>
+                      </div>
+
+                      <div class="column-photo ddqn">
+                        <div class="content-photo">
+                          <img src="RLImages/ddqnagent1.png" alt="Car" style="width:100%">
+                        </div>
+                      </div>
+                      <div class="column-photo ddqn">
+                        <div class="content-photo">
+                        <img src="RLImages/ddqnagent2.png" alt="Car" style="width:100%">
+                        </div>
+                      </div>
+                      <div class="column-photo ddqn">
+                        <div class="content-photo">
+                        <img src="RLImages/ddqntesting.png" alt="Car" style="width:100%">
+                        </div>
+                      </div>
+                      <div class="column-photo ddqn">
+                          <div class="content-photo">
+                          <img src="RLImages/ddqnperformance.png" alt="Car" style="width:100%">
+                          </div>
+                        </div>
+                    
+                        <div class="column-photo qac">
+                            <div class="content-photo">
+                              <img src="RLImages/qacagent1.png" alt="Car" style="width:100%">
+                            </div>
+                          </div>
+                          <div class="column-photo qac">
+                            <div class="content-photo">
+                            <img src="RLImages/qacagent2.png" alt="Car" style="width:100%">
+                            </div>
+                          </div>
+                          <div class="column-photo qac">
+                            <div class="content-photo">
+                            <img src="RLImages/qactesting.png" alt="Car" style="width:100%">
+                            </div>
+                          </div>
+                          <div class="column-photo qac">
+                              <div class="content-photo">
+                              <img src="RLImages/qacperformance.png" alt="Car" style="width:100%">
+                              </div>
+                            </div>
+                            <div class="column-photo aac">
+                                <div class="content-photo">
+                                  <img src="RLImages/a2cagent1.png" alt="Car" style="width:100%">
+                                </div>
+                              </div>
+                              <div class="column-photo aac">
+                                <div class="content-photo">
+                                <img src="RLImages/a2cagent2.png" alt="Car" style="width:100%">
+                                </div>
+                              </div>
+                              <div class="column-photo aac">
+                                <div class="content-photo">
+                                <img src="RLImages/a2ctesting.png" alt="Car" style="width:100%">
+                                </div>
+                              </div>
+                              <div class="column-photo aac">
+                                  <div class="content-photo">
+                                  <img src="RLImages/a2cperformance.png" alt="Car" style="width:100%">
+                                  </div>
+                                </div>
+                  <!-- END GRID -->
+                  </div>
+            </div>   
+        </div>
+        <div class="column right">
+          <div class="rotate-text"><span class="highlight-text">niharikad2209@gmail.com</span></div>
+        </div>
+        
+      </div>
+
+      <script>
+        filterSelection("qlearning");
+
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("column-photo");
+            if (c == "all") c = "";
+            for (i = 0; i < x.length; i++) {
+                if (x[i].classList.contains(c)) {
+                    w3AddClass(x[i], "show");
+                } else {
+                    w3RemoveClass(x[i], "show");
+                }
+            }
+        }
+
+        function w3AddClass(element, name) {
+            var arr = element.className.split(" ");
+            if (arr.indexOf(name) == -1) {
+                element.className += " " + name;
+            }
+        }
+
+        function w3RemoveClass(element, name) {
+            var arr = element.className.split(" ");
+            while (arr.indexOf(name) > -1) {
+                arr.splice(arr.indexOf(name), 1);
+            }
+            element.className = arr.join(" ");
+        }
+
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+
+        </script>
+</body>
+</html>

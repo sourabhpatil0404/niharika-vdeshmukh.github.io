@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Niharika Deshmukh</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <!-- Link mobile styles for devices with a maximum width of 767px -->
+    <link rel="stylesheet" type="text/css" href="styles-mobile.css" media="screen and (max-width: 767px)">
+
+    <!-- Link tablet styles for devices with a width between 768px and 1023px -->
+    <link rel="stylesheet" type="text/css" href="styles-tablet.css" media="screen and (min-width: 768px) and (max-width: 1023px)">
+
+    <!-- Link desktop styles for devices with a width of 1024px and above -->
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen and (min-width: 1024px)">
+
+</head>
+<body>
+    
+    <div class="row">
+        <div class="column left">
+            <ul>
+                <li><a href="https://www.linkedin.com/in/niharika-deshmukh/"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/niharika-vdeshmukh"><i class="fa fa-github"></i></a></li>
+                <li><a href="https://niharika-vdeshmukh.github.io/"><i class="fa fa-home"></i></a></li>
+                <li><a href="Niharika_Resume.pdf"><i class="fa fa-download"></i></a></li>
+                <!-- <li><div class="vertical-line"></div></li> -->
+            </ul>
+            
+
+        </div>
+        
+        <div class="column middle">
+            <div style="margin: 30px auto; padding: 30px" class="about-container" id="about">
+                    <h1>Domainbrew</h1>
+                    <div style="text-align: left; justify-content: left;" class="tags">
+                        <div class="broker-tag">4 mins read</div>
+                      &nbsp; 
+                      <div class="broker-tag">December 26, 2023</div> 
+                      &nbsp; 
+                    </div>
+                    <div style="text-align: left; justify-content: left;" class="tags">
+                        <div class="broker-tag">Project Contributers: Harshith Pokala Muni 😎 and Niharika Deshmukh 😳.
+                        </div>
+                      &nbsp; 
+                    </div>
+                    <p>
+                        In this project we are creating a decentralized platform to purchase, sell, and auction the domain names. Unique, small and catchy domain names have high demand in the market. Currently we use a centralized system to buy or sell a DNS. This system is vulnerable to DDOS attacks, centralization makes this system vulnerable as there is a single point of failure. On the top of this system, there are DNS brokers, who sell, lease the domains. But using brokers doesn’t give us ownership and all profit for selling or buying a domain. Thus to overcome this situation, we can introduce a decentralized platform where any user can tokenize, buy and sell the domain to a larger audience. This project will give the users ability to use domains as their liquid assets which they are. We will be tokenizing domain names using ERC721 standards. This application will have two types of users - domain owner and sellers. A domain owner can tokenize his domains, set a price for it and auction it. While a buyer will have the ability to participate in the auctions, direct purchase. All the transactions for domain names will happen on the blockchain network, making the platform more secure and reliable.                    
+                    </p>
+            </div>
+            
+            <div style="margin: 30px auto; padding: 10px" class="about-container" id="about">
+                <h4>02. Issues Addressed</h4>
+
+                <p>
+                    Current web2 domain name system is a two layered system. The core layer is a centralized system, on the top of it there are domain registrars who lease the domains for a certain amount of time. Users cannot have ownership of the domain name in web2. They are highly expensive and prone to security attacks because they are stored in a single place. The charges are high for the web2 domain names. There is a lack of transparency on the history of ownership of the domain names. Moreover, the auction of web2 domain names is limited to very few people, and not everyone can participate. Decentralization of domain names creates decentralized ownership of domain names where the users can control the domain names rather than a central authority. This can help in increasing transparency and security. The costs associated with the conventional system of domain names can be reduced by the use of decentralized domain names.                </p>
+
+            </div>
+            <div style="margin: 30px auto; padding: 10px" class="about-container" id="about">
+                <h4>03. Domain Name Tokenization:</h4>
+
+                <p>
+                    In the initial stage of implementation, the project focuses on representing domain names as digital assets through tokenization, utilizing the ERC721 standard to create unique Non-Fungible Tokens (NFTs) for each domain name. This approach ensures the distinct and secure representation of domain names on the blockchain.
+                </p>
+
+            </div>
+            <div style="margin: 30px auto; padding: 10px" class="about-container" id="about">
+                <h4>04. Smart Contracts</h4>
+
+                <p>
+                    The core functionality of the system is managed through smart contracts written in Solidity and deployed on the Sepolia network. The key smart contracts include DomainToken, responsible for creating and transferring domain name NFTs; Auction, facilitating domain name auctions; and Ownership, which keeps a comprehensive record of ownership history. These smart contracts govern the essential operations of token creation, transfer, auctioning, and ownership tracking on the blockchain.                </p>
+            </div>
+            <div style="margin: 30px auto; padding: 10px" class="about-container" id="about">
+                <h4>05. Frontend(React.js)</h4>
+
+                <p>
+                    For user interaction and accessibility, the frontend is developed using React.js, offering a user-friendly interface. This layer enables crucial functionalities such as user registration and authentication, browsing and searching for domain names, conducting NFT transactions for buying and selling domains, and integrating with MetaMask for viewing NFTs and transaction history securely. The React.js frontend provides a seamless and intuitive experience for users engaging with the blockchain-powered domain tokenization platform.                
+                </p>
+            </div>
+            <div style="margin: 30px auto; padding: 10px" class="about-container" id="about">
+                <h4>06. Offchain Data (Express.js, AWS RDS)</h4>
+
+                <p>
+                    Offchain data, including user profiles, domain descriptions, and metadata that do not need to be on-chain, is stored in an AWS RDS relational database. Express.js is employed to create a RESTful API service, establishing a connection between the frontend and the offchain data stored in AWS RDS. This offchain component enhances the overall system by efficiently managing non-critical data off the blockchain, contributing to a more scalable and organized architecture.
+                </p>
+            </div>
+            <div style="margin: 30px auto; padding: 10px" class="about-container" id="about">
+                <h4>07. Deployment</h4>
+
+                <p>
+                    In the final stage, the entire project is deployed to the Heroku platform for web app accessibility, ensuring a smooth and widespread user experience. Simultaneously, the smart contracts are deployed to the Sepolia network, making the blockchain functionalities accessible to users. The integration of MetaMask into the frontend further empowers users to securely track their NFTs and perform blockchain transactions with ease, completing the comprehensive deployment of this domain tokenization project.                </p>
+            </div>            
+        </div>
+        <div class="column right">
+            <div class="rotate-text"><span class="highlight-text">niharikad2209@gmail.com</span></div>
+        </div>
+        
+      </div>
+</body>
+</html>
