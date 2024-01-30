@@ -45,7 +45,7 @@ h4 {
 p {
     font-size: 1.1em; 
     color: #8892b0;
-    /* font-weight: lighter; */
+    font-weight: lighter;
     line-height: 1.5;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -154,21 +154,19 @@ i {
     width: 50%;
     float: left;
 }
+.sixty-parts {
+    width: 60%;
+    float: left;
+}
+.forty-parts {
+    width: 40%;
+    float: left;
+}
 
 .seventy-parts {
     padding-top:20px;
     padding-bottom: 20px;
 }
-
-/* .thirty-parts {
-    width: 30%;
-    float: left;
-}
-
-.seventy-parts {
-    width: 70%;
-    float: left;
-} */
 
 .middle {
     width: 90%;
@@ -218,7 +216,7 @@ i {
     margin-bottom: 50px;
     border-radius: 15px; 
     padding: 50px;
-    max-width: 800px;
+    max-width: 750px;
     z-index: 70;
 }
 
@@ -258,7 +256,7 @@ i {
 }
 
 .experience-container {
-    max-width: 700px;
+    max-width: 750px;
     margin: 50px auto;
 }
 .transparent-button:hover {
@@ -322,8 +320,9 @@ i {
 
 .timeline-item {
     position: relative;
-    margin: 20px 0px;
+    margin: 40px 0px;
     padding-left: 40px;
+    text-align: justify;
 }
 
 .timeline-item::before {
@@ -331,8 +330,8 @@ i {
     position: absolute;
     top: 15px;
     left: -8px;
-    width: 11px;
-    height: 11px;
+    width: 10px;
+    height: 10px;
     background-color: #38C7A8;
 }
 
@@ -340,7 +339,7 @@ i {
     display: block;
     font-size: 0.9em;
     color: #8892b0;
-    margin-bottom: 5px;
+    margin-bottom: 8x;
 }
 
 .timeline-title {
@@ -354,10 +353,16 @@ i {
 
 .timeline-content {
     color: #8892b0;
+    line-height: 1.77em;
+    font-weight: lighter;
+
+    /* letter-spacing: 0.8em; */
 }
 
 .timeline-content p {
-    padding: 1px;
+    padding: 1.5px;
+    font-weight: lighter;
+
 }
 
 .education {
@@ -366,15 +371,20 @@ i {
     margin-right: auto;
     margin-top: 50px;
     margin-bottom: 50px;
-    max-width: 600px;
+    max-width: 750px;
     padding: 50px;
     
 }
 
 .projects {
     clear: both;
-    margin: 50px;
+    /* margin: 50px; */
     padding: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 750px;
 }
 
 .cards {
@@ -383,16 +393,18 @@ i {
     justify-content: space-between;
 } 
 .card {
-    background-color: #0a192f;
+    /* background-color: #0a192f; */
     padding: 20px;
-    width: 480px; /* 50% width for two cards, subtracting margin */
+    /* width: 390px; */
+     /* 50% width for two cards, subtracting margin */
     height: auto;
     margin: 25px 0;
     border-radius: 10px;
+    border-color: #38C7A8;
 }
 .card p {
     letter-spacing: 1px;
-    padding: 1px;
+    /* padding: 1px; */
 }
 .card-title {
     color:#38C7A8;
@@ -726,4 +738,5 @@ h1, h4, p, .transparent-button, .menu-items {
 .broker-tag:hover {
     animation: spinIn 1s ease-out forwards;
 } */ 
+
 
