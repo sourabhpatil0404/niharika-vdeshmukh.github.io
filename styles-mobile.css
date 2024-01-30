@@ -218,6 +218,15 @@ i {
     float: left;
 }
 
+.sixty-parts {
+    width: 100%;
+    float: left;
+}
+.forty-parts {
+    width: 100%;
+    float: left;
+}
+
 .middle {
     width: 100%;
     margin-left: 0%;
